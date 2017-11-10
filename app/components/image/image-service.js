@@ -7,8 +7,10 @@ function ImageService() {
 		// ^^^^^^^ How do you call this function?
 		return $.get(apiUrl, function (res) {
 			res = JSON.parse(res)
-			console.log('Image Data:', res)
+			localStorage.setItem('image', JSON.stringify(res))
 			callWhenDone(res)
 		})
 	}
 }
+
+
