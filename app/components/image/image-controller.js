@@ -11,17 +11,15 @@ function ImageController(){
 
     function drawImage(photo){
         debugger
-        var template = ''
-            template += `
-                <img src="${photo}">
-`
-        
-        document.getElementById('body').innerHTML = template
+
+document.body.style.backgroundImage = `url(${photo})`       
+
     }
     
 
         
 }
+
 
 
 
