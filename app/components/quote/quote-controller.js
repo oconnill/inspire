@@ -1,19 +1,27 @@
-function QuoteController(){
+function QuoteController() {
 
 	var qs = new QuoteService()
 
-	qs.getQuote(function(quote){
-		console.log('What is the quote', quote)
+	qs.getQuote(function (quo) {
+		console.log('What is the quote', quo)
+		drawQuote(quo)
+
 	})
+
+	function drawQuote(quo) {
+		debugger
+		var template = ''
+		template += `
+		<div class="pa4">
+		<blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue">
+		  <p class="f5 f4-m f3-l lh-copy measure mt0">
+		${quo.quote}
+		  </p>
+		  <cite class="f6 ttu tracked fs-normal">-${quo.author}</cite>
+		</blockquote>
+	  </div>
+`
+		document.getElementById('quote').innerHTML = template
+	}
 }
 
-// function WeatherController(){
-// 	var wc = this;
-// 	var weatherService = new WeatherService();
-	
-// 	weatherService.getWeather(function(weather){
-// 		console.log(weather);
-// 		//What can you do with this weather object?
-// 	})
-
-// }

@@ -10,7 +10,7 @@ function ImageController(){
 
 
     function drawImage(photo){
-        debugger
+
 
 document.body.style.backgroundImage = `url(${photo})`       
 
