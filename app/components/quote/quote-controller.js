@@ -3,13 +3,11 @@ function QuoteController() {
 	var qs = new QuoteService()
 
 	qs.getQuote(function (quo) {
-		console.log('What is the quote', quo)
 		drawQuote(quo)
 
 	})
 
 	function drawQuote(quo) {
-		debugger
 		var template = ''
 		template += `
 		<div class="pa4">

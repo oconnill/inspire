@@ -14,18 +14,26 @@ function TodoController() {
 		todoService.getTodos(draw)
 	}
 
+
+	// takes in the array of todos from the get function and displays on the template
 	function draw(todos) {
 		//WHAT IS MY PURPOSE?
+		debugger
 		//BUILD YOUR TODO TEMPLATE HERE
 		var template = ''
 		//DONT FORGET TO LOOP
+		for (var i = 0; i < todos.length; i++) {
+			var todo = todos[i];
 	}
+}
 
 	this.addTodoFromForm = function (e) {
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
 		var form = e.target
 		var todo = {
+			// id
+			// message
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
 		}
 
@@ -44,10 +52,10 @@ function TodoController() {
 
 	this.removeTodo = function (todoId) {
 		// ask the service to run the remove todo with this id
-
+		todoService.removeTodo(todoId, getTodos)
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
-
+draw()
 	// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
 
 }

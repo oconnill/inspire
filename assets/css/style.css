@@ -11,3 +11,10 @@ body {
     min-width: 100%;
     min-height: 100%;
 }
+
+.list {         list-style-type: none; }
+
+.ba {
+    border-style: solid;
+    border-width: 1px;
+}
