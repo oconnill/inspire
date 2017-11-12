@@ -19,7 +19,8 @@ function QuoteController() {
 		</blockquote>
 	  </div>
 `
-		document.getElementById('quote').innerHTML = template
-	}
+document.getElementById("quote").innerHTML = template
+}
+	
 }
 

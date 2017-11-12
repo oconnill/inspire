@@ -8,7 +8,7 @@ function QuoteService(){
 		$.get(apiUrl, function(res){
 			res = JSON.parse(res)
 			//Now What?
-			localStorage.setItem('quote', JSON.stringify(res))
+			localStorage.setItem('todo', JSON.stringify(res))
 			callWhenDone(res)
 		})
 	}

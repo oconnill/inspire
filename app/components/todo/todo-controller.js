@@ -7,7 +7,14 @@ function TodoController() {
 	// removeTodo takes in a todoId and sends a delete request to the server
 	// **** HINT: Everytime you make a change to any todo don't forget to get the todo list again
 	var todoService = new TodoService()
+	var test = {
+		todoId: 3,
+		message: 'Test Test' 
+	}
 
+	todoList.push(test)
+
+	
 	// Use this getTodos function as your callback for all other edits
 	function getTodos(){
 		//FYI DONT EDIT ME :)
@@ -16,27 +23,30 @@ function TodoController() {
 
 
 	// takes in the array of todos from the get function and displays on the template
-	function draw(todos) {
-		//WHAT IS MY PURPOSE?
+	function draw(todoList) {
 		debugger
+		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
 		var template = ''
 		//DONT FORGET TO LOOP
-		for (var i = 0; i < todos.length; i++) {
-			var todo = todos[i];
+		for (var i = 0; i < todoList.length; i++) {
+			var todo = todoList[i];
+			template += `
+			<li>${todo} <a class="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0">Remove</a></li>
+		`
+		document.getElementById('todo-list').innerHTML = template
 	}
+	
 }
 
 	this.addTodoFromForm = function (e) {
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
-		var form = e.target
+		debugger
+		var newLine = e.target.line.value
 		var todo = {
-			// id
-			// message
-			// DONT FORGET TO BUILD YOUR TODO OBJECT
+			line: newLine
 		}
-
 		//PASSES THE NEW TODO TO YOUR SERVICE
 		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
 		//YOU SHOULDN'T NEED TO CHANGE THIS
@@ -55,7 +65,17 @@ function TodoController() {
 		todoService.removeTodo(todoId, getTodos)
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
-draw()
+
+	draw()
 	// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
 
 }
+
+
+// this.addAuto = function addAuto(event) {
+//     event.preventDefault()
+//     var form = event.target
+//     autosService.addAuto(form)
+//     autosFormElem.classList.toggle('hidden', true)
+//     drawAutos()
+//   }
