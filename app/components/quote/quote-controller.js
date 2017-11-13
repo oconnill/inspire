@@ -11,7 +11,7 @@ function QuoteController() {
 			var template = ''
 			template += `
 			<div class="pa4">
-			<blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue">
+			<blockquote class="athelas ml0 mt0 pl4 white bl bw2 b--orange">
 				<p class="f5 f4-m f3-l lh-copy measure mt0">
 			${quo.quote}
 				</p>
