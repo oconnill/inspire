@@ -15,4 +15,7 @@ function QuoteService(){
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9d1fc75419333cefe5bb92bc7992fb5f75da4a22
