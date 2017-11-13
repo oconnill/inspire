@@ -1,58 +1,54 @@
 <html>
-		
-		<head>
-			<meta charset="UTF-8">
-			<title>Inspire</title>
-			<link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>	
-			<link rel="stylesheet" href="assets/css/style.css">
-		</head>
-		
-		<body id="body" class="full-image">
-			<div id="weather">
-				<!-- <h3>CITY</h3>
-				<h5>TEMP</h5> -->
-			</div>
-		
-			<div id="quote">
-				<!-- <div class="pa4">
-						<blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue">
-						  <p class="f5 f4-m f3-l lh-copy measure mt0">
-							Discipline in typography is a prime virtue. Individuality
-							must be secured by means that are rational. Distinction
-							needs to be won by simplicity and restraint. It is equally
-							true that these qualities need to be infused wiht a
-							certain spirit and vitality, or they degenerate into
-							dullness and mediocrity.
-						  </p>
-						  <cite class="f6 ttu tracked fs-normal">―Stanley Morison</cite>
-						</blockquote>
-					  </div>
-			</div> -->
-		</div>
-			<div id="todo">
-				<form onsubmit=""></form>
-				A Todo List
-			</div>
-		
-		
-		
-		
-			<!--JS Libraries-->
-			<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-			<!--Services-->
-			<script src="app/components/weather/weather-service.js"></script>
-			<script src="app/components/image/image-service.js"></script>
-			<script src="app/components/quote/quote-service.js"></script>
-			<script src="app/components/todo/todo-service.js"></script>
-		
-			<!--Controllers-->
-			<script src="app/components/weather/weather-controller.js"></script>
-			<script src="app/components/image/image-controller.js"></script>
-			<script src="app/components/quote/quote-controller.js"></script>
-			<script src="app/components/todo/todo-controller.js"></script>
-		
-			<!--Initialize App-->
-			<script src="app/init.js"></script>
-		</body>
-		
-		</html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Inspire</title>
+	<link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+	 crossorigin="anonymous">
+
+	<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body id="body" class="full-image">
+	<div class="temp" id="weather">
+	</div>
+
+	<div id="quote" class="block-quote">
+	</div>
+	<div id="todo" class="todobox">
+		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+			<input type="text" name="line" id="todo-text" class="todo-text" placeholder="Todo List">
+		</form>
+		<ul class="list pl0" id="todo-list">
+			<li>
+				<div class="flex items-center mb2">
+
+				</div>
+			</li>
+		</ul>
+	</div>
+
+
+
+
+	<!--JS Libraries-->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<!--Services-->
+	<script src="app/components/weather/weather-service.js"></script>
+	<script src="app/components/image/image-service.js"></script>
+	<script src="app/components/quote/quote-service.js"></script>
+	<script src="app/components/todo/todo-service.js"></script>
+
+	<!--Controllers-->
+	<script src="app/components/weather/weather-controller.js"></script>
+	<script src="app/components/image/image-controller.js"></script>
+	<script src="app/components/quote/quote-controller.js"></script>
+	<script src="app/components/todo/todo-controller.js"></script>
+
+	<!--Initialize App-->
+	<script src="app/init.js"></script>
+</body>
+
+</html>
