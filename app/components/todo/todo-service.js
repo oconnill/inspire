@@ -46,7 +46,7 @@ function TodoService() {
 		// 	//STEP 3: Here is that weird Ajax request because $.put doesn't exist
 		// 	//put will update 
 		$.ajax({
-			method: 'DELETE',
+			method: 'PUT',
 			contentType: 'application/json',
 			url: baseUrl + '/' + todoId,
 			data: JSON.stringify(todo)

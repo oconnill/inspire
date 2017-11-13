@@ -8,6 +8,7 @@ function TodoController() {
 	// **** HINT: Everytime you make a change to any todo don't forget to get the todo list again
 	var todoService = new TodoService()
 
+
 	// Use this getTodos function as your callback for all other edits
 	function getTodos() {
 		//FYI DONT EDIT ME :)
@@ -32,7 +33,7 @@ function TodoController() {
 		`
 		for (var i = 0; i < todoList.length; i++) {
 			var todo = todoList[i];
-			if (todo.completed == true) {
+			if (todo.completed == false) {
 				template += `
 			<li>${todo.line} 
 			<input class="mr2" type="checkbox" id="check" checked onclick="app.controllers.todoController.toggleTodoStatus(${i})">
@@ -52,18 +53,18 @@ function TodoController() {
 			
 
 		}
+		
 		document.getElementById('todo-list').innerHTML = template
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
 	this.addTodoFromForm = function (e) {
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
-		
+
 		var newLine = e.target.line.value
 		var todo = {
 			line: newLine,
@@ -75,20 +76,21 @@ function TodoController() {
 		todoService.addTodo(todo, getTodos)
 		//^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
 	}
-	
+
 	this.toggleTodoStatus = function (todoId) {
 		// asks the service to edit the todo status
 		todoService.toggleTodoStatus(todoId, getTodos)
 		// YEP THATS IT FOR ME
 	}
-	
+
 	this.removeTodo = function (todoId) {
 		// ask the service to run the remove todo with this id
 		todoService.removeTodo(todoId, getTodos)
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
-	
+
 	getTodos()
-	
+
 }
+		// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
 
