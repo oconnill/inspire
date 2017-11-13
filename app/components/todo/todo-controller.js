@@ -35,20 +35,24 @@ function TodoController() {
 			var todo = todoList[i];
 			if (todo.completed == false) {
 				template += `
+				<div class="mr3">
 			<li>${todo.line} 
 			<input class="mr2" type="checkbox" id="check" checked onclick="app.controllers.todoController.toggleTodoStatus(${i})">
 			<a class="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0" onclick="app.controllers.todoController.removeTodo(${i})">Remove</a></li>                        
 			</li>
+			</div>
 		`
 			}
 			else {
-				template += `
-		<li>${todo.line} 
+		template += `
+
+		<li>${todo.line}
 		<input class="mr2" type="checkbox" id="check" value="" onclick="app.controllers.todoController.toggleTodoStatus(${i})">
 		<a class="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0" onclick="app.controllers.todoController.removeTodo(${i})">Remove</a></li>                        
 		</li>
-	`
 
+	`
+	
 			}
 			
 
