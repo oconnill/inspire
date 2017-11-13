@@ -1,7 +1,8 @@
 function TodoService() {
 	// A local copy of your todos
 	var todoList = []
-	var baseUrl = 'https://inspire-server.herokuapp.com/api/todos/DanO'
+	var baseUrl = 'https://inspire-server.herokuapp.com/api/todos/Dan'
+
 
 
 	function logError(err) {
@@ -12,10 +13,12 @@ function TodoService() {
 
 	//this is getting the todo from the server
 	this.getTodos = function (callWhenDone) {
+		debugger
 		$.get(baseUrl)
 			.then(function (res) { // <-- WHY IS THIS IMPORTANT????
-				res = JSON.parse(res)
-				localStorage.setItem('todo', JSON.stringify(res))
+				// todo = JSON.parse(res)
+				localStorage.setItem('todo', JSON.stringify(todo))
+				todoList.push(todo)
 				callWhenDone(res)
 			})
 			.fail(logError)

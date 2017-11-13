@@ -7,18 +7,15 @@ function TodoController() {
 	// removeTodo takes in a todoId and sends a delete request to the server
 	// **** HINT: Everytime you make a change to any todo don't forget to get the todo list again
 	var todoService = new TodoService()
-	var test = {
-		todoId: 3,
-		message: 'Test Test' 
-	}
-
-	todoList.push(test)
 
 	
 	// Use this getTodos function as your callback for all other edits
 	function getTodos(){
 		//FYI DONT EDIT ME :)
+		debugger
+
 		todoService.getTodos(draw)
+		
 	}
 
 
@@ -32,7 +29,7 @@ function TodoController() {
 		for (var i = 0; i < todoList.length; i++) {
 			var todo = todoList[i];
 			template += `
-			<li>${todo} <a class="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0">Remove</a></li>
+			<li>${todo.line} <a class="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0">Remove</a></li>
 		`
 		document.getElementById('todo-list').innerHTML = template
 	}
@@ -66,7 +63,7 @@ function TodoController() {
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
 
-	draw()
+	// draw()
 	// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
 
 }
